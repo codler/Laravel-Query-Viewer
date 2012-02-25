@@ -4,13 +4,13 @@
  * @copyright 2012 zencodez.net
  * @license http://creativecommons.org/licenses/by-sa/3.0/
  * @package Query Viewer (Laravel Bundle)
- * @version 1.1 - 2012-02-25
+ * @version 1.2 - 2012-02-25
  */
 
-Route::filter('after', function($response)
+Laravel\Routing\Route::filter('after', function($response)
 {
 	if ($_SERVER['LARAVEL_ENV'] == 'local') {
-		$queries = DB::profile();
+		$queries = Laravel\Database::profile();
 		$count = 0;
 		$sum = 0;
 		$queries = array_map(function ($query) use (&$count, &$sum) {
@@ -21,9 +21,9 @@ Route::filter('after', function($response)
 		$queries[] = 'Total time: ' . $sum . 'ms' . PHP_EOL . '---';
 
 		$log_file = path('storage').'queries.txt';
-		File::append($log_file, implode(PHP_EOL, $queries) . PHP_EOL);
+		Laravel\File::append($log_file, implode(PHP_EOL, $queries) . PHP_EOL);
 
-		if ( Input::has('debug-query') ) {
+		if ( Laravel\Input::has('debug-query') ) {
 			echo implode(PHP_EOL, $queries);
 			die();
 		}
