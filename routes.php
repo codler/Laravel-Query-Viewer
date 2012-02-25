@@ -1,4 +1,11 @@
 <?php
+/**
+ * @author Han Lin Yap < http://zencodez.net/ >
+ * @copyright 2012 zencodez.net
+ * @license http://creativecommons.org/licenses/by-sa/3.0/
+ * @package Query Viewer (Laravel Bundle)
+ * @version 1.1 - 2012-02-25
+ */
 
 Route::filter('after', function($response)
 {

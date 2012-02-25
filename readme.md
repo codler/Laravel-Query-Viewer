@@ -14,6 +14,6 @@ Add the following to your **application/bundles.php** file:
 		'auto' => 'true',
 	),
 
-## Guide
+## Usage
 
-To see the queries add "?debug-query=1" in the url and it will only show in local environment. (LARAVEL_ENV = local)
+To see the queries add "?debug-query=1" in the url and Query Viewer are only enabled in local environment. (LARAVEL_ENV = local)

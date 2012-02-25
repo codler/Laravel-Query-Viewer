@@ -1,3 +1,3 @@
 <?php
 
-return array('name' => 'queryviewer');
+return array('name' => 'query-viewer');
